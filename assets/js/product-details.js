@@ -142,9 +142,8 @@ function updateProductDetails(product) {
                     // fallback placeholder
                     imgUrl = 'https://i.ibb.co/bMN3LPt6/Untitled-1.jpg';
                 }
-
                 // Prepare a readable message and encode it so spaces/newlines are safe in the URL
-                const rawMsg = `Hello, I want to order this product:\n\n*${productName}*\nSize: ${selectedSize}\n\n${imgUrl}`;
+                const rawMsg = `Hello, I want to order this product:\n\n*${productName}*\nSize: ${selectedSize}\n${imgUrl}`;
                 const encodedMsg = encodeURIComponent(rawMsg);
                 window.open(`https://wa.me/${phone}?text=${encodedMsg}`, '_blank');
             };
