@@ -83,7 +83,7 @@ function updateProductDetails(product) {
     if (ogImg) {
         let imgUrl = '';
         if (product.image) {
-            imgUrl = product.image.startsWith('https') ? product.image : window.location.origin + '/' + product.image;
+            imgUrl = product.image.startsWith('http') ? product.image : new URL(product.image, window.location.origin).href;
         } else {
             imgUrl = 'https://i.ibb.co/bMN3LPt6/Untitled-1.jpg';
         }
