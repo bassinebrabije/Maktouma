@@ -83,7 +83,7 @@ function updateProductDetails(product) {
     if (ogImg) {
         let imgUrl = '';
         if (product.image) {
-            imgUrl = product.image.startsWith('http') ? product.image : new URL(product.image, window.location.origin).href;
+            imgUrl = product.image.startsWith('https') ? product.image : new URL(product.image, window.location.origin).href;
         } else {
             imgUrl = 'https://i.ibb.co/bMN3LPt6/Untitled-1.jpg';
         }
@@ -132,11 +132,21 @@ function updateProductDetails(product) {
                     const sizeLabel = checkedSize.parentElement.querySelector('.size-btn');
                     if (sizeLabel) selectedSize = sizeLabel.textContent.trim();
                 }
-                // WhatsApp message with product image
+                // WhatsApp message with product image (make absolute URL and encode message)
                 const phone = '212767596530'; // Morocco number, no + or spaces
-                const imgUrl = window.location.origin + '/' + product.image;
-                const msg = `Hello, I want to order this product:%0A%0A*${productName}*%0ASize: ${selectedSize} `;
-                window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
+                // Build an absolute image URL (handle relative paths and missing images)
+                let imgUrl = '';
+                if (product.image) {
+                    imgUrl = product.image.startsWith('http') ? product.image : new URL(product.image, window.location.origin).href;
+                } else {
+                    // fallback placeholder
+                    imgUrl = 'https://i.ibb.co/bMN3LPt6/Untitled-1.jpg';
+                }
+
+                // Prepare a readable message and encode it so spaces/newlines are safe in the URL
+                const rawMsg = `Hello, I want to order this product:\n\n*${productName}*\nSize: ${selectedSize}\n\n${imgUrl}`;
+                const encodedMsg = encodeURIComponent(rawMsg);
+                window.open(`https://wa.me/${phone}?text=${encodedMsg}`, '_blank');
             };
         }
     }, 100);
