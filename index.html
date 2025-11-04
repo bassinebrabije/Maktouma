@@ -233,7 +233,6 @@
                                                 class="flaticon-up-right-arrow"></i></a>
                                     </div>
                                 </div>
-
                                 <!-- single slide -->
                                 <div class="swiper-slide ul-banner-slide ul-banner-slide--3">
                                     <div class="ul-banner-slide-img">
@@ -583,13 +582,6 @@
         </div>
         <script>
             const categories = ['best-selling', 'on-selling', 'top-rating'];
-            const MAX_TITLE_LENGTH = 20; // maximum number of characters for titles
-
-            function truncateTitle(title, maxLength) {
-                if (title.length <= maxLength) return title;
-                return title.slice(0, maxLength - 3) + '...'; // leave space for "..."
-            }
-
             // Function to generate stars based on category
             function generateStars(category) {
                 const stars = category === 'top-rating' ? 5 : 3;
@@ -601,32 +593,33 @@
             }
 
             function createHorizontalProductCard(product, category) {
-                const truncatedTitle = truncateTitle(product.title, MAX_TITLE_LENGTH);
+                // No truncation — use full title
+                const truncatedTitle = product.title;
                 const starsHtml = generateStars(category);
 
                 return `
-      <div class="mix col ${category}">
-        <div class="ul-product-horizontal" data-product-id="${product.id}">
-          <div class="ul-product-horizontal-img">
-            <a href="shop-details.html?id=${product.id}" class="product-link">
-              <img src="${product.image}" alt="${product.title}">
-            </a>
-          </div>
-          <div class="ul-product-horizontal-txt">
-            <span class="ul-product-price">${product.price}</span>
-            <h4 class="ul-product-title">
-              <a href="shop-details.html?id=${product.id}" class="product-link">${truncatedTitle}</a>
-            </h4>
-            <h5 class="ul-product-category">
-              <a href="${product.category_link}">Sizes: ${product.sizes}</a>
-            </h5>
-            <div class="ul-product-rating">
-              ${starsHtml}
+            <div class="mix col ${category}">
+                <div class="ul-product-horizontal" data-product-id="${product.id}">
+                    <div class="ul-product-horizontal-img">
+                        <a href="shop-details.html?id=${product.id}" class="product-link">
+                            <img src="${product.image}" alt="${product.title}">
+                        </a>
+                    </div>
+                    <div class="ul-product-horizontal-txt">
+                        <span class="ul-product-price">${product.price}</span>
+                        <h4 class="ul-product-title">
+                            <a href="shop-details.html?id=${product.id}" class="product-link">${truncatedTitle}</a>
+                        </h4>
+                        <h5 class="ul-product-category">
+                            <a href="${product.category_link}">Sizes: ${product.sizes}</a>
+                        </h5>
+                        <div class="ul-product-rating">
+                            ${starsHtml}
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    `;
+            `;
             }
 
             const container = document.getElementById('horizontal-products');
@@ -635,13 +628,14 @@
                 .then(response => response.json())
                 .then(data => {
                     // Only first 5 products
-                    data.slice(0, 5).forEach((product, index) => {
+                    data.slice(0, 6).forEach((product, index) => {
                         const category = categories[index % categories.length];
                         container.innerHTML += createHorizontalProductCard(product, category);
                     });
                 })
                 .catch(error => console.error('Error fetching products:', error));
         </script>
+
 
 
 
@@ -761,7 +755,8 @@
                                 <i class="flaticon-star"></i>
                                 <i class="flaticon-star-3"></i>
                             </div>
-                            <p class="ul-review-descr">I absolutely love my abaya from Maktouma! The quality is amazing,
+                            <p class="ul-review-descr">I absolutely love my abaya from Maktouma! The quality is
+                                amazing,
                                 and it arrived so quickly. I’ve never felt more
                                 elegant. Highly recommend!</p>
                             <div class="ul-review-bottom">
@@ -795,7 +790,8 @@
                                 <i class="flaticon-star"></i>
                                 <i class="flaticon-star-3"></i>
                             </div>
-                            <p class="ul-review-descr">Maktouma really delivers on style and authenticity. Every piece
+                            <p class="ul-review-descr">Maktouma really delivers on style and authenticity. Every
+                                piece
                                 feels luxurious, and their delivery service is super
                                 fast. I’m obsessed!</p>
                             <div class="ul-review-bottom">
@@ -826,7 +822,8 @@
                                 <i class="flaticon-star"></i>
                                 <i class="flaticon-star-3"></i>
                             </div>
-                            <p class="ul-review-descr">Shopping with Maktouma was effortless. My abaya fits perfectly,
+                            <p class="ul-review-descr">Shopping with Maktouma was effortless. My abaya fits
+                                perfectly,
                                 and the craftsmanship is outstanding. I’ll definitely
                                 order again!</p>
                             <div class="ul-review-bottom">
@@ -858,7 +855,8 @@
                                 <i class="flaticon-star"></i>
                                 <i class="flaticon-star-3"></i>
                             </div>
-                            <p class="ul-review-descr">I’ve never received an abaya that looks so elegant and feels so
+                            <p class="ul-review-descr">I’ve never received an abaya that looks so elegant and feels
+                                so
                                 comfortable. Fast shipping, amazing quality, and
                                 excellent customer service!</p>
                             <div class="ul-review-bottom">
