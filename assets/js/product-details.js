@@ -83,9 +83,9 @@ function updateProductDetails(product) {
     if (ogImg) {
         let imgUrl = '';
         if (product.image) {
-            imgUrl = product.image.startsWith('http') ? product.image : window.location.origin + '/' + product.image;
+            imgUrl = product.image.startsWith('https') ? product.image : window.location.origin + '/' + product.image;
         } else {
-            imgUrl = 'https://ibb.co/VcMNDt6L';
+            imgUrl = 'https://i.ibb.co/bMN3LPt6/Untitled-1.jpg';
         }
         ogImg.setAttribute('content', imgUrl);
     }
