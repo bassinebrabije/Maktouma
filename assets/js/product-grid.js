@@ -15,17 +15,18 @@ function createProductHTML(product) {
     return `
     <div class="col">
         <div class="ul-product" data-product-id="${product.id}">
-          <div class="ul-product-bottom-txt">
-                    <div class="ul-product-bottom-txt-left" style="padding-bottom: 10px;">
-                        <span class="ul-product-price">${product.price}</span>
-                    </div>
-                </div>
+         
             <div class="ul-product-img">
                 <a href="shop-details.html?id=${product.id}" class="product-link">
                     <img src="${product.image}" alt="${product.title}">
                 </a>
             </div>
             <div class="ul-product-txt">
+             <div class="ul-product-bottom-txt">
+                    <div class="ul-product-bottom-txt-left" >
+                        <span class="ul-product-price" style="color :#EF2853">${product.price}</span>
+                    </div>
+                </div>
                 <span class="ul-product-category"><a href="${product.category_link}">M a k t o u m a</a></span>
                 <h4 class="ul-product-title">
                     <a href="shop-details.html?id=${product.id}" class="product-link">${product.title}</a>

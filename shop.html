@@ -211,15 +211,16 @@
             return `
           <div class="col">
             <div class="ul-product">
-              <div class="ul-product-heading">
-                <span class="ul-product-price">${product.price}</span>
-                <!-- Optional discount badge -->
-                <!-- <span class="ul-product-discount-tag">25% Off</span> -->
-              </div>
+            
               <div class="ul-product-img">
                 <img src="${product.image}" alt="${product.title}">
               </div>
               <div class="ul-product-txt">
+                <div class="ul-product-heading">
+                <span class="ul-product-price" style="color :#EF2853">${product.price}</span>
+                <!-- Optional discount badge -->
+                <!-- <span class="ul-product-discount-tag">25% Off</span> -->
+              </div>
                 <h4 class="ul-product-title">
                   <a href="${product.details_link}">${product.title}</a>
                 </h4>
