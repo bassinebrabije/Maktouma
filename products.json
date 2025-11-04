@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "price": "14O KM",
+        "price": "14O BAM",
         "image": "assets/img/ASIYA.jpg",
         "image1": "assets/img/product-img-1-1.jpg",
         "image2": "assets/img/product-img-1-2.jpg",
@@ -13,7 +13,7 @@
     },
     {
         "id": 2,
-        "price": "130 KM",
+        "price": "130 BAM",
         "image": "assets/img/MAGRIBI.jpg",
         "image1": "assets/img/product-img-2-1.jpg",
         "image2": "assets/img/product-img-2-2.jpg",
@@ -25,7 +25,7 @@
     },
     {
         "id": 3,
-        "price": "120  KM",
+        "price": "120  BAM",
         "image": "assets/img/SALSABIL.jpg",
         "image1": "assets/img/product-img-3-1.jpg",
         "image2": "assets/img/product-img-3-2.jpg",
@@ -37,7 +37,7 @@
     },
     {
         "id": 4,
-        "price": "120  KM",
+        "price": "120  BAM",
         "image": "assets/img/AMINA.jpg",
         "image1": "assets/img/product-img-4-1.jpg",
         "image2": "assets/img/product-img-4-2.jpg",
@@ -49,7 +49,7 @@
     },
     {
         "id": 5,
-        "price": "110   KM",
+        "price": "110   BAM",
         "image": "assets/img/LOLLIPOP.jpg",
         "image1": "assets/img/product-img-5-1.jpg",
         "image2": "assets/img/product-img-5-2.jpg",
@@ -61,7 +61,7 @@
     },
     {
         "id": 6,
-        "price": "60   KM",
+        "price": "60   BAM",
         "image": "assets/img/ZAHRA.jpg",
         "image1": "assets/img/product-img-6-1.jpg",
         "image2": "assets/img/product-img-6-2.jpg",
@@ -73,7 +73,7 @@
     },
     {
         "id": 7,
-        "price": "130   KM",
+        "price": "130   BAM",
         "image": "assets/img/LEYLA.jpg",
         "image1": "assets/img/product-img-7-1.jpg",
         "image2": "assets/img/LEYLA.jpg",
@@ -85,7 +85,7 @@
     },
     {
         "id": 8,
-        "price": "115 KM",
+        "price": "115 BAM",
         "image": "assets/img/FATIMA.jpg",
         "image1": "assets/img/product-img-8-1.jpg",
         "image2": "assets/img/product-img-8-2.jpg",
@@ -97,7 +97,7 @@
     },
     {
         "id": 9,
-        "price": "100 KM",
+        "price": "100 BAM",
         "image": "assets/img/ZULAIKHA.jpg",
         "image1": "assets/img/ZULAIKHA.jpg",
         "image2": "assets/img/ZULAIKHA.jpg",
@@ -109,7 +109,7 @@
     },
     {
         "id": 10,
-        "price": "130  KM",
+        "price": "130  BAM",
         "image": "assets/img/MAGRIBII.jpg",
         "image1": "assets/img/product-img-10-1.jpg",
         "image2": "assets/img/product-img-10-2.jpg",
@@ -121,7 +121,7 @@
     },
     {
         "id": 11,
-        "price": "130  KM",
+        "price": "130  BAM",
         "image": "assets/img/SALSABILL.jpg",
         "image1": "assets/img/product-img-11-1.jpg",
         "image2": "assets/img/SALSABILL.jpg",
