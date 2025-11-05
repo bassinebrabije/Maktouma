@@ -552,6 +552,22 @@
             </section>
         </div>
         <!-- AD SECTION END -->
+        <style>
+            .mix {
+                overflow: hidden;
+                max-height: 1000px;
+                /* large enough to fit the card */
+                opacity: 1;
+                transition: max-height 0.4s ease, opacity 0.4s ease;
+            }
+
+            .mix.hidden {
+                max-height: 0;
+                opacity: 0;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
         <!-- MOST SELLING START -->
         <div class="ul-container">
             <section class="ul-products ul-most-selling-products">
@@ -565,77 +581,20 @@
                         <div class="right">
                             <div class="ul-most-sell-filter-navs">
                                 <button type="button" data-filter="all">All Products</button>
-                                <button type="button" data-filter=".best-selling">Best Selling</button>
-                                <button type="button" data-filter=".on-selling">On Selling</button>
-                                <button type="button" data-filter=".top-rating">Top Rating</button>
+                                <button type="button" data-filter="best-selling">Best Selling</button>
+                                <button type="button" data-filter="on-selling">On Selling</button>
+                                <button type="button" data-filter="top-rating">Top Rating</button>
                             </div>
                         </div>
                     </div>
 
-
                     <!-- products grid -->
                     <div id="horizontal-products"
                         class="ul-bs-row row row-cols-xl-4 row-cols-lg-3 row-cols-sm-2 row-cols-1 ul-filter-products-wrapper">
-
                     </div>
                 </div>
             </section>
         </div>
-        <script>
-            const categories = ['best-selling', 'on-selling', 'top-rating'];
-            // Function to generate stars based on category
-            function generateStars(category) {
-                const stars = category === 'top-rating' ? 5 : 3;
-                let html = '';
-                for (let i = 0; i < stars; i++) {
-                    html += `<span class="star"><i class="flaticon-star"></i></span>`;
-                }
-                return html;
-            }
-
-            function createHorizontalProductCard(product, category) {
-                // No truncation — use full title
-                const truncatedTitle = product.title;
-                const starsHtml = generateStars(category);
-
-                return `
-            <div class="mix col ${category}">
-                <div class="ul-product-horizontal" data-product-id="${product.id}">
-                    <div class="ul-product-horizontal-img">
-                        <a href="shop-details.html?id=${product.id}" class="product-link">
-                            <img src="${product.image}" alt="${product.title}">
-                        </a>
-                    </div>
-                    <div class="ul-product-horizontal-txt">
-                        <span class="ul-product-price">${product.price}</span>
-                        <h4 class="ul-product-title">
-                            <a href="shop-details.html?id=${product.id}" class="product-link">${truncatedTitle}</a>
-                        </h4>
-                        <h5 class="ul-product-category">
-                            <a href="${product.category_link}">Sizes: ${product.sizes}</a>
-                        </h5>
-                        <div class="ul-product-rating">
-                            ${starsHtml}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            `;
-            }
-
-            const container = document.getElementById('horizontal-products');
-
-            fetch('products.json')
-                .then(response => response.json())
-                .then(data => {
-                    // Only first 5 products
-                    data.slice(0, 6).forEach((product, index) => {
-                        const category = categories[index % categories.length];
-                        container.innerHTML += createHorizontalProductCard(product, category);
-                    });
-                })
-                .catch(error => console.error('Error fetching products:', error));
-        </script>
 
 
 
@@ -1216,6 +1175,7 @@
     <script src="assets/vendor/fslightbox/fslightbox.js"></script>
 
     <!-- custom JS -->
+    <script src="assets/js/Filter.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/countdown.js"></script>
 </body>
