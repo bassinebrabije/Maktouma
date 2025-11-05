@@ -65,7 +65,6 @@ fetch('products.json')
                 }
             });
         }
-
         // Attach click events to buttons
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
